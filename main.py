@@ -35,7 +35,7 @@ def calculate_tax(income, gender='Male', age=35, citizen='Bangladesh', freedom_f
                         tax_20_extra = tax_15_extra - 500000
 
                         if tax_20_extra > 0:
-                            tax += (500000 * 25) / 100
+                            tax += (tax_20_extra * 25) / 100
                     else:
                         tax += (tax_15_extra * 20) / 100
 
@@ -51,4 +51,7 @@ def calculate_tax(income, gender='Male', age=35, citizen='Bangladesh', freedom_f
 
 
 if __name__ == '__main__':
-    print(calculate_tax(1300000))
+    income_ = int(input('Enter your Income: '))
+
+    tax = calculate_tax(income_)
+    print('Your tax =', tax)
